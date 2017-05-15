@@ -1,0 +1,176 @@
+<!--
+Templatename: Resposive Helsida HTML - 1920x1080px
+Date Created: 2015-09-29
+Created: Bonnier News - Digital Annons Utveckling
+
+This is a reference/example code for Resposive Helsida.
+Please adjust or recplace with own code. Make creative resposive for best practise,
+with max-width 1920 pixels down to 1024 pixels in 16:9 ratio.
+
+Also please insert css for the cursor on the main element example:
+
+#ad-holder {
+        cursor: pointer;
+        cursor: hand;
+}
+
+ADtoma Fusion html5clickcount file are included.
+Example to call the clickTag in ADtoma Fusion is provided:
+
+Alternative 1:
+
+Add a call to the function fusionclickcount() whenever a redirect is done and you want to count clicks.
+E.g.
+<a href="http://www.destinationurl.com" onclick="fusionclickcount();" target="_blank">A link I want to count</a>
+
+
+Alternative 2:
+
+Add clickTag before the destination URL, like this:
+
+window.open(clickTag+"http://www.advertisersite.com/subpage", "_blank");
+
+or like this:
+
+window.open(clickTag+dynamicUrlObject, "_blank");
+
+If you have several different destination URL’s in the ad then use
+
+clickTag2,clickTag3… -> clickTag10 for the other URL’s
+
+Compress the assets in a single zip-file before deleiver.
+
+Url for test the clickCount/clickTag:
+http://www.adtoma.com/html5/html5test.html
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <!-- ADtoma Fusion html5clickcount file - DO NOT REMOVE -->
+    <script src="http://fusion.adtoma.com/spl/html5clickcount.js"></script>
+    <style>
+    /* Predefined reference CSS code for this template, preffered to be replaced with own code*/
+    html, body {
+        margin: 0;
+        height: 100%;
+        font-family: arial;
+        font-size: 12px;
+    }
+
+    #ad-holder {
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: 1918px;
+        max-height: 1078px;
+        margin-left: auto;
+        margin-right: auto;
+        cursor: pointer;
+        cursor: hand;
+    }
+
+    #helsida {
+        display: block;
+        max-width: 1918px;
+        max-height: 1078px;
+        height: 100%;
+    }
+
+    /*Example: Centered content holder*/
+    #content-holder {
+        width: 400px;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin-left: -220px;
+        /* total height/2 */
+        margin-top: -60px;
+        /* total width/2 */
+        border: 1px dotted #484846;
+        text-align: center;
+        padding: 20px;
+    }
+    /* Predfined Media Querys, make own adjustments */
+    /* 1664x936 pixels */
+
+    @media screen and (min-width: 1664px) {
+        body {
+            background-color: #8e8e93;
+        }
+    }
+    /* 1536x864 pixels */
+
+    @media screen and (max-width: 1663px) {
+        body {
+            background-color: #ff3b30;
+        }
+    }
+    /* 1408x792 pixels */
+
+    @media screen and (max-width: 1408px) {
+        body {
+            background-color: #4cd964;
+        }
+    }
+    /* 1280x720 pixels */
+
+    @media screen and (max-width: 1280px) {
+        body {
+            background-color: #5ac8fa;
+        }
+    }
+    /* 1152x648 pixels */
+
+    @media screen and (max-width: 1152px) {
+        body {
+            background-color: #ff9500;
+        }
+    }
+    /* 1024x576 pixels */
+
+    @media screen and (max-width: 1024px) {
+        body {
+            background-color: #ffcc00;
+        }
+    }
+    </style>
+</head>
+<body>
+    <!-- Adjust this codeblock or replace with own code -->
+    <div id="ad-holder">
+        <div id="helsida">
+            <!--
+            This is the are for the toolbar.
+            The toolbar will take 48 pixels in height of the content and will be placed over the creative.
+            The toolbar is delivered from the system, you can't remove the toolbar are from code.
+            This is only for demo purpose ! Be aware that the borde covers content in the top.
+            -->
+            <div id="toolbar" style="position:absolute;width:100%;z-index:100000;height:47px; border-bottom: 1px dotted #484846;font-size:10px;background-image: url(http://www.transparenttextures.com/patterns/tiny-grid.png);">
+                <div style="padding-top:15px;padding-left:15px">Demo Toolbar area, this should be removed, place no important information in this area</div>
+            </div>
+            <!-- //End toolbar demo :: THIS TOOLBAR SHOULD BE REMOVED FROM THE CODE BASE -->
+            <!-- Place content/code here -->
+            <div id="content-holder">
+                <img src="http://bn-01.adtomafusion.com:80/DA2CB/9AB77DC.png">
+                <div>Resonsive Helsida
+                    <br>Max Width:1920x1080 pixlar
+                    <br>Aspect Ratio 16:9</div>
+            </div>
+            <!-- // End content holder -->
+        </div>
+    </div>
+    <!-- //END codeblock -->
+</body>
+<script>
+//Example ADtoma Fusion clickTag function
+document.getElementById("ad-holder").addEventListener("click", function() {
+    console.log('Clicked')
+    window.open(clickTag, "_blank");
+});
+</script>
+</html>
